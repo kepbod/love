@@ -125,7 +125,7 @@ function adjustWordsPosition() {
 	$('#words').css("position", "absolute");
 	$('#words').css("top", $("#garden").position().top + 175);
 	if ($("#garden").position().left == 0) {
-		$('#words').css("left", $("#garden").position().left);
+		$('#words').css("left", $("#garden").position().left + 15);
 		$('#loveu').css("margin-right", "200px");
 		$('#elapseClock').css("margin-right", "135px");
 	}else{
