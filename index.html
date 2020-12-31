@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Our Love Story</title>
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/uikit.min.css" type="text/css" rel="stylesheet" \>
+	<link href="css/default.css" type="text/css" rel="stylesheet" \>
+	<script type="text/javascript" src="js/uikit.min.js"></script>
+	<script type="text/javascript" src="js/uikit-icons.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div uk-grid>
+	<div id="code" class="uk-width-1-2 uk-width-1-1@s uk-align-center">
+			<span class="comments">"""</span><br />
+			<span class="space" /><span class="comments">We met each other in a magical winter,</span><br />
+			<span class="space" /><span class="comments">so I wrote some codes to record these beautiful memories.</span><br />
+			<span class="space" /><span class="comments">"""</span><br />
+			i = <span class="keyword">Boy</span>(<span class="string">"Kepbod"</span>)<br />
+			you = <span class="keyword">Girl</span>(<span class="string">"Alicia"</span>)<br />
+			<span class="comments"># Dec 4, 2020, I told you I love you. </span><br />
+			i.love(you)<br />
+			<span class="comments"># Luckily, you accepted and became my girlfriend eversince.</span><br />
+			you.accepted(i)<br />
+			<span class="comments"># Since then, I miss you every day.</span><br />
+			i.miss(you)<br />
+			<span class="comments"># I beleve we can be extraordinary together.</span><br />
+			<span class="comments"># If set a timer, I want it to be infinity.</span><br />
+			timer = <span class="keyword">math.inf</span><br />
+			<span class="keyword">while</span> (timer):<br />
+			<span class="placeholder" />i.take_care_of(you)<br />
+			<span class="placeholder" />you.live_happy_lift_with(i)<br />
+			<span class="comments"># Hand in hand , till grow old with you.</span>
+		</div>
+		<div id="loveHeart" class="uk-width-1-2 uk-width-1-1@s uk-align-center">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Ya, I have fallen in love with you for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love you forever and ever.<br />
+					<div class="signature">- Xiao-Ou</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2020, 11, 4);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+		adjustCodePosition();
+		$("#code").typewriter();
+	</script>
+</body>
+</html>
