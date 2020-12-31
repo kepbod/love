@@ -124,7 +124,13 @@ function showMessages() {
 function adjustWordsPosition() {
 	$('#words').css("position", "absolute");
 	$('#words').css("top", $("#garden").position().top + 175);
-	$('#words').css("left", $("#garden").position().left + 70);
+	if ($("#garden").position().left == 0) {
+		$('#words').css("left", $("#garden").position().left);
+		$('#loveu').css("margin-right", "200px");
+		$('#elapseClock').css("margin-right", "135px");
+	}else{
+		$('#words').css("left", $("#garden").position().left + 70);
+	}
 }
 
 function adjustCodePosition() {
