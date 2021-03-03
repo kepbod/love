@@ -14,14 +14,15 @@
 	<link href="css/default.css" type="text/css" rel="stylesheet" \>
 	<script type="text/javascript" src="js/uikit.min.js"></script>
 	<script type="text/javascript" src="js/uikit-icons.min.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
 </head>
 
 <body>
-<div uk-grid>
-	<div id="code" class="uk-width-1-2 uk-width-1-1@s uk-align-center">
+	<div uk-grid>
+		<canvas id="canvas"></canvas>
+		<div id="code" class="uk-width-1-2 uk-width-1-1@s uk-align-center">
 			<span class="comments">"""</span><br />
 			<span class="space" /><span class="comments">Both of us were born in winter,</span><br />
 			<span class="space" /><span class="comments">and we also met each other in a magical winter,</span><br />
@@ -69,7 +70,12 @@
 		setTimeout(function () {
 			startHeartAnimation();
 		}, 5000);
-		timeElapse(together);
+		var days = timeElapse(together);
+		if (days % 100 == 0 || days % 365 == 0) {
+			var script = document.createElement('script'); 
+			script.src = 'js/firework.js';
+			document.body.appendChild(script);
+		}
 		setInterval(function () {
 			timeElapse(together);
 		}, 500);
