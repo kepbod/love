@@ -71,7 +71,7 @@
 			startHeartAnimation();
 		}, 5000);
 		var days = timeElapse(together);
-		if (days % 100 == 0 || days % 365 == 0) {
+		if (days % 100 == 0 || (days + 1) % 100 == 0 || days % 365 == 0 || (days + 1) % 365 == 0) {
 			var script = document.createElement('script'); 
 			script.src = 'js/firework.js';
 			document.body.appendChild(script);
